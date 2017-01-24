@@ -56,3 +56,5 @@ services:
     links:
       - django_app_1:django_app_1
       - django_app_2:django_app_2
+    volumes_from:
+      - django_app_1
