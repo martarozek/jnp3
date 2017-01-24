@@ -51,7 +51,7 @@ export const auth = {
       $auth.logout().then(() => {
         $http({
           method: 'POST',
-          url: 'http://localhost:8000/rest-auth/logout/'
+          url: 'http://localhost:9999/rest-auth/logout/'
         });
       });
     };
