@@ -31,11 +31,13 @@ python3 /code/manage.py migrate --settings=fietsenrek.settings.production --fake
 
 # Django: collectstatic
 #
-# This will upload the files to s3 because of django-storages-redux
-# and the setting:
-# STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-# echo "==> Django setup, executing: collectstatic"
-# python3 /code/manage.py collectstatic --noinput -v 3
+echo "==> Django setup, executing: collectstatic"
+python3 /code/manage.py collectstatic --settings=fietsenrek.settings.production --noinput -v 3
+
+# Django: create superuser
+echo "==> Django setup, executing: createsuperuser"
+echo "from accounts.models import User; User.objects.filter(email='admin@example.com').delete(); User.objects.create_superuser('admin@example.com', 'admin', 'test1234')" | python manage.py shell --settings=fietsenrek.settings.production
+
 
 # Django: create superuser
 echo "==> Django setup, executing: createsuperuser"

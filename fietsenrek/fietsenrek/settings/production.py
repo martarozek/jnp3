@@ -47,3 +47,5 @@ CACHES = {
         ]
     }
 }
+
+STATIC_ROOT = '/code/static-files'
