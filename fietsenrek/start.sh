@@ -37,6 +37,11 @@ python3 /code/manage.py migrate --settings=fietsenrek.settings.production --fake
 # echo "==> Django setup, executing: collectstatic"
 # python3 /code/manage.py collectstatic --noinput -v 3
 
+# Django: create superuser
+echo "==> Django setup, executing: createsuperuser"
+echo "from accounts.models import User; User.objects.filter(email='admin@example.com').delete(); User.objects.create_superuser('admin@example.com', 'admin', 'test1234')" | python manage.py shell --settings=fietsenrek.settings.production
+
+
 #####
 # Start uWSGI
 #####

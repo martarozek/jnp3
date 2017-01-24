@@ -8,10 +8,6 @@
 
       <md-button ng-click="$ctrl.sort()">Sort on votes</md-button>
 
-      <div layout="row" layout-align="center center">
-        <md-button ng-hide="$ctrl.isCreating" class="md-accent md-raised md-hue-2" ng-click="$ctrl.create()" ng-disabled="!$ctrl.isAuthenticated()">{{$ctrl.isAuthenticated()? 'Create' : 'Log in to create'}}</md-button>
-      </div>
-
       <div ng-repeat="rack in $ctrl.racks track by $index">
         <md-card md-theme="default" md-theme-watch>
           <md-card-title>
