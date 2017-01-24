@@ -16,5 +16,7 @@ ADD db_check.py ./config/database-check.py
 RUN adduser --no-create-home --disabled-login --group --system django
 RUN chown -R django:django /code/
 
+VOLUME /code/static-files
+
 RUN ["chmod", "+x", "start.sh"]
 CMD ["./start.sh"]
