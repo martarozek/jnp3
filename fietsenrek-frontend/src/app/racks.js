@@ -96,7 +96,6 @@ export const racks = {
 
     this.save = function () {
       this.newData = {};
-      this.newData.place_id = 42; //random value, not used but needed
       this.newData.city = this.newCity;
       this.newData.country = this.newCountry;
       this.newData.description = this.newDescription;
